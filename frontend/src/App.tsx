@@ -1,7 +1,7 @@
 // src/App.tsx
 /**
  * The main application component that serves as the central layout and integration point
- * for all UI elements and state management within the Valiax frontend.
+ * for all UI elements and state management within the QuaChat frontend.
  * 
  * It manages database connections, table and column selections, rule creation,
  * and integrates the chat widget. It also handles modals and drawers for database
@@ -195,7 +195,7 @@ export default function App() {
         <Toolbar>
           {/* Application title */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Valiax
+            QuaChat
           </Typography>
           {/* Button to toggle database connections drawer */}
           <Button color="inherit" onClick={toggleNav}>

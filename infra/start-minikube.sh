@@ -1,5 +1,5 @@
 # start-minikube.sh: Script to set up a local Minikube cluster, build Docker images,
-# load them into Minikube, and deploy the Valiax application stack into the ‘valiax’ namespace.
+# load them into Minikube, and deploy the QuaChat application stack into the ‘quachat’ namespace.
 #!/bin/bash
 
 # Exit immediately if any command fails (non-zero exit)
@@ -20,10 +20,10 @@ echo "🚀 Starting Minikube..."
 # Start Minikube with Docker driver and allocate CPU/memory resources
 minikube start --driver=docker --cpus=4 --memory=4096
 
-# Configure kubectl to target the Minikube cluster and use the ‘valiax’ namespace
+# Configure kubectl to target the Minikube cluster and use the ‘quachat’ namespace
 kubectl config use-context minikube
-kubectl create namespace valiax || true
-kubectl config set-context --current --namespace=valiax
+kubectl create namespace quachat || true
+kubectl config set-context --current --namespace=quachat
 
 
 # Build local Docker images for components and load them into Minikube’s Docker daemon
@@ -53,15 +53,15 @@ echo "📑 Creating ConfigMap for ecommerce init scripts…"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # One configmap per ecommerce database to allow individual initialization
-kubectl delete configmap ecommerce-init-1 -n valiax --ignore-not-found
+kubectl delete configmap ecommerce-init-1 -n quachat --ignore-not-found
 kubectl create configmap ecommerce-init-1 \
   --from-file=init.sql="$REPO_ROOT/ecommerce-init-1/init.sql" \
-  -n valiax
+  -n quachat
 
-kubectl delete configmap ecommerce-init-2 -n valiax --ignore-not-found
+kubectl delete configmap ecommerce-init-2 -n quachat --ignore-not-found
 kubectl create configmap ecommerce-init-2 \
   --from-file=init.sql="$REPO_ROOT/ecommerce-init-2/init.sql" \
-  -n valiax
+  -n quachat
 
 # Create or update ConfigMap for backend initialization scripts
 echo "📑 Creating ConfigMap for init scripts…"
@@ -87,7 +87,7 @@ nohup kubectl port-forward svc/backend 8000:8000 >/dev/null 2>&1 &
 # Notify user that the frontend is being opened in the default browser
 echo "🌐 Opening frontend in browser..."
 # Query the NodePort assigned to the frontend service and compose the URL
-NODE_PORT=$(kubectl get svc frontend -n valiax -o jsonpath='{.spec.ports[0].nodePort}')
+NODE_PORT=$(kubectl get svc frontend -n quachat -o jsonpath='{.spec.ports[0].nodePort}')
 MINIKUBE_IP=$(minikube ip)
 FRONTEND_URL="http://${MINIKUBE_IP}:${NODE_PORT}"
 echo "🌐 Frontend accessible at: $FRONTEND_URL"

@@ -1,7 +1,7 @@
 """
 main.py
 
-This is the main FastAPI application for the Valiax backend. It provides a REST API and WebSocket endpoints
+This is the main FastAPI application for the QuaChat backend. It provides a REST API and WebSocket endpoints
 for managing database connections, inspecting tables and columns, managing data quality rules, and interacting
 with a language model (LLM) microservice for chat functionality.
 

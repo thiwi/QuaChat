@@ -1,4 +1,4 @@
-"""Database engine and session management for the Valiax backend."""
+"""Database engine and session management for the QuaChat backend."""
 
 import os
 from dotenv import load_dotenv
@@ -19,7 +19,7 @@ DB_USER = os.getenv("DB_USER", "user")  # Database username, default is 'user'
 DB_PASSWORD = os.getenv("DB_PASSWORD", "password")  # Database password, default is 'password'
 DB_HOST = os.getenv("DB_HOST", "postgres")  # Database host address, default is 'postgres' (service name)
 DB_PORT = os.getenv("DB_PORT", "5432")  # Database port, default PostgreSQL port is 5432
-DB_NAME = os.getenv("DB_NAME", "Valiax")  # Database name, default is 'Valiax'
+DB_NAME = os.getenv("DB_NAME", "QuaChat")  # Database name, default is 'QuaChat'
 
 # Construct the full database URL string used by SQLAlchemy to connect to the database.
 # If DATABASE_URL is set, it overrides the constructed URL.

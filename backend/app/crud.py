@@ -1,4 +1,4 @@
-"""CRUD helper functions for the Valiax backend."""
+"""CRUD helper functions for the QuaChat backend."""
 
 from sqlalchemy.orm import Session
 from . import models, schemas

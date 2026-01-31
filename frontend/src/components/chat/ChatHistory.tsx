@@ -41,8 +41,8 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ messages, loading, historyRef
             <ListItemText
               // Display the message text
               primary={msg.text}
-              // Display sender label: 'You' for user, 'Valiax' for bot
-              secondary={msg.from === 'user' ? 'You' : 'Valiax'}
+              // Display sender label: 'You' for user, 'QuaChat' for bot
+              secondary={msg.from === 'user' ? 'You' : 'QuaChat'}
               // Align message text right if from user, left if from bot
               primaryTypographyProps={{ align: msg.from === 'user' ? 'right' : 'left' }}
               // Use caption style for the sender label
@@ -58,7 +58,7 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ messages, loading, historyRef
     {loading && (
       <Box sx={{ textAlign: 'center', mt: 1 }}>
         <CircularProgress size={20} />
-        <Typography variant="caption">Valiax is typing...</Typography>
+        <Typography variant="caption">QuaChat is typing...</Typography>
       </Box>
     )}
   </Box>
