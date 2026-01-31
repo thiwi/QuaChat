@@ -1,4 +1,4 @@
-# valiax/worker/Dockerfile
+# quachat/worker/Dockerfile
 FROM python:3.11-slim
 
 WORKDIR /app

@@ -1,4 +1,4 @@
-"""Additional unit tests for the Valiax backend."""
+"""Additional unit tests for the QuaChat backend."""
 
 import importlib
 import sys

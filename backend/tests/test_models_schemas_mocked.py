@@ -12,7 +12,7 @@ import sys
 import os
 
 # Mock the database module to avoid actual database connections
-sys.path.insert(0, '/home/ubuntu/valiax_tests/backend')
+sys.path.insert(0, '/home/ubuntu/quachat_tests/backend')
 
 # Create mock modules
 class MockBase:

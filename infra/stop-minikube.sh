@@ -7,10 +7,10 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Path to the Kubernetes manifests file
 DEPLOYMENT_FILE="$SCRIPT_DIR/deployment.yml"
 
-# Switch context to 'valiax' namespace for cleanup
-kubectl config set-context --current --namespace=valiax
+# Switch context to 'quachat' namespace for cleanup
+kubectl config set-context --current --namespace=quachat
 
-echo "🛑 Stopping Valiax environment..."
+echo "🛑 Stopping QuaChat environment..."
 
 echo "🗑️ Deleting Kubernetes deployments and services..."
 kubectl delete -f "$DEPLOYMENT_FILE" || true
@@ -21,7 +21,7 @@ minikube image rm backend:latest || true
 minikube image rm worker:latest || true
 
 echo "🗑️ Deleting Kubernetes PersistentVolumeClaims and PersistentVolumes..."
-kubectl delete pvc --all --namespace valiax || true
+kubectl delete pvc --all --namespace quachat || true
 kubectl delete pv --all || true
 
 echo "🗑️ Deleting Docker volumes inside Minikube..."

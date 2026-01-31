@@ -1,4 +1,4 @@
-"""SQLAlchemy ORM models used by the Valiax backend."""
+"""SQLAlchemy ORM models used by the QuaChat backend."""
 
 import uuid
 from sqlalchemy import Column, String, Text, ForeignKey, DateTime, JSON, Integer, Boolean

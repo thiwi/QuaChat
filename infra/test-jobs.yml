@@ -30,7 +30,7 @@ spec:
             && pytest -v --maxfail=1 --disable-warnings --junitxml=/reports/backend-results.xml
         env:
         - name: DATABASE_URL
-          value: postgresql://user:password@localhost:5432/valiax_test
+          value: postgresql://user:password@localhost:5432/quachat_test
         volumeMounts:
         - name: postgres-data
           mountPath: /var/lib/postgresql/data
@@ -46,7 +46,7 @@ spec:
         - name: POSTGRES_PASSWORD
           value: "password"
         - name: POSTGRES_DB
-          value: "valiax_test"
+          value: "quachat_test"
         volumeMounts:
         - name: postgres-data
           mountPath: /var/lib/postgresql/data

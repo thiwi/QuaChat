@@ -46,7 +46,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ expanded, onOpen, onClose }) =>
           textAlign: 'center',
         }}
       >
-        <Typography variant="subtitle1">Chat with Valiax</Typography>
+        <Typography variant="subtitle1">Chat with QuaChat</Typography>
         {expanded && (
           // IconButton: displays a close ("X") icon in the header when expanded.
           // Clicking this button triggers the onClose callback to collapse the chat.

@@ -1,4 +1,4 @@
 """
-Backend package for the Valiax application.
+Backend package for the QuaChat application.
 Contains the API, database models, and utilities.
 """

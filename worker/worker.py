@@ -84,7 +84,7 @@ def check_rules():
     cur.close()
     conn.close()
 
-    runner_url = os.getenv("RULE_RUNNER_URL", "http://rule-runner.valiax.svc.cluster.local/run")
+    runner_url = os.getenv("RULE_RUNNER_URL", "http://rule-runner.quachat.svc.cluster.local/run")
 
     # Send an HTTP POST for each due rule to the external rule-runner service
     for rule_id in due_rules:

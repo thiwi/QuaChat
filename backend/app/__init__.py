@@ -1,3 +1,3 @@
 """
-Subpackage holding database models and CRUD logic for Valiax.
+Subpackage holding database models and CRUD logic for QuaChat.
 """
